@@ -1,0 +1,40 @@
+.fixedContainer {
+  width: 100px;
+  height: 300px;
+  background-color: #1e1e1e;
+  /* Background color */
+  overflow: hidden;
+  /* Hide overflow to scroll the text inside */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: $mantine-breakpoint-md) {
+    width: 50px;
+    height: 150px;
+  }
+}
+
+.scrollingText {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(100%);
+  /* Initially place the text out of view */
+  transition: transform 0.1s ease-in-out;
+  /* Smooth scrolling effect */
+}
+
+.scrollingText p {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  /* Flip the text */
+  color: white;
+  margin: 20px 0;
+  font-size: 35px;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media (max-width: $mantine-breakpoint-md) {
+    font-size: 16px;
+  }
+}
